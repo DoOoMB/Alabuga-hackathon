@@ -1,4 +1,4 @@
 from model.model import SAModel
 import os
 
-model = SAModel(r"C:\Users\gowor\OneDrive\Документы\Alabuga-hackathon\model\bert3")
+model = SAModel(r".\model\1bert1", r".\model\2bert1")

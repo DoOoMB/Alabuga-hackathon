@@ -10,6 +10,7 @@
             padding: 0;
             outline: 0;
             font-family: 'Nunito', sans-serif;
+            z-index: 1;
             /* display: block; */
         }
 
@@ -191,7 +192,7 @@
         }
 
         .scroll-table-body {
-            /* height: 100px; */
+            height: 100px;
             width: 100%;
             overflow-x: auto;
             overflow-y: scroll;
@@ -268,16 +269,6 @@
         }
     </script>
     <section>
-        <ul id="bgAnimation">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
         <form id="modelForm" class="Form" method="post" onsubmit="">    
             <input class="textField" type="text" name="modelInput" placeholder="ссылка"></input>
             <div id="modelError" class="FormError" style="color:red; font-size: 10px"></div>
@@ -305,6 +296,16 @@
                 </table>
             </div>
         </div>
+        <ul id="bgAnimation">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
     </section>
 </body>
 </html>

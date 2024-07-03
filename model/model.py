@@ -112,19 +112,27 @@ class Prediction:
 
 
 class SAModel:
-    def __init__(self, model_path):
-        self.pipe = pipeline("text-classification", model=model_path)
+    def __init__(self, model_path1, model_path2):
+        self.pipe1 = pipeline("text-classification", model=model_path1)
+        self.pipe2 = pipeline("text-classification", model=model_path2)
         self.tagger = NERTagger()
  
     def predict(self, text: str) -> Prediction:
+        import numpy as np
         samples = self.tagger.get_samples(text)
         texts = sum((x[1] for x in list(samples.items())), start=[])
  
-        preds = [int(x["label"][-1]) for x in self.pipe(texts)]
+        preds1 = np.array([int(x["label"][-1]) for x in self.pipe1(texts)])
+        preds2 = np.array([int(x["label"][-1]) for x in self.pipe2(texts)])
+ 
+        preds = preds1
+        preds *= (preds2 + 1)
+ 
+        preds = [1 if x == 0 else (0 if x == 1 else 2) for x in preds]
  
         result = dict()
         i = 0
         for org, org_texts in samples.items():
             result[org] = [preds[i] for i in range(i, i + len(org_texts))]
-        
+ 
         return Prediction(result)
