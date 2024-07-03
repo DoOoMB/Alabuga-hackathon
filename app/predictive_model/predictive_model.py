@@ -1,4 +1,4 @@
 from model.model import SAModel
 import os
 
-model = SAModel(r".\model\1bert1", r".\model\2bert1")
+model = SAModel("model/1bert1", "model/2bert1")
