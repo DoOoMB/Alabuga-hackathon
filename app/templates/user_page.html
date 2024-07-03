@@ -10,6 +10,7 @@
             padding: 0;
             outline: 0;
             font-family: 'Nunito', sans-serif;
+            /* display: block; */
         }
 
         section {
@@ -138,7 +139,7 @@
         }
 
         form {
-            width: 350px;
+            width: 50rem;
             position: relative;
             z-index: 10;
             text-align: center;
@@ -190,7 +191,7 @@
         }
 
         .scroll-table-body {
-            height: 100px;
+            /* height: 100px; */
             width: 100%;
             overflow-x: auto;
             overflow-y: scroll;
@@ -242,11 +243,18 @@
             margin-top: 10px;
             width:100%;
         }
+
+        th {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
     </style>
     <nav>
         <img src="http://127.0.0.1:5000/static/images/alabuga_icon.png" height="60"class="mw-100 dark" srcset="" width="60">
         <a id="withoutAuth" href="http://127.0.0.1:5000/guest">Модель</a>
-        <a id="logout" href="http://127.0.0.1:5000/logout">Выйти</a>
+        <a id="logout" href="http://127.0.0.1:5000/logout">выйти</a>
+        <a id="login" href="http://127.0.0.1:5000/login">войти</a>
     </nav>
 </head>
 <body>
