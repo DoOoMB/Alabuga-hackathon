@@ -5,8 +5,7 @@ def create_app():
     app = Flask(__name__)
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///customers.db"
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-    with open("secret_key.txt") as file:
-        app.config["SECRET_KEY"] = file.readline()
+    app.config["SECRET_KEY"] = "gigiug*t*&(*yibibdos(uy(&t&*t^r%$^*&()hodsokdbosjb)))"
     app.config["SESSION_TYPE"] = "filesystem"
     import app.auth_module.authentification as auth_module
     import app.general.routes as general_module
