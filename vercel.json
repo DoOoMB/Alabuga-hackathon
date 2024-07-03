@@ -3,7 +3,7 @@
     "name": "test-vercel-flask",
     "builds": [
       {
-        "src": "*.py",
+        "src": "index.py",
         "use": "@liudonghua123/now-flask"
       }
     ],
